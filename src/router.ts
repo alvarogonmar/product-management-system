@@ -10,8 +10,8 @@ router.get("/", (req, res) => {
 })
 
 router.post("/", 
-        // Validate request body
-    body('name').notEmpty().withMessage('Name product is required'),
+        // Validate request body 
+    body('name').notEmpty().withMessage('Name product is required'), // Validate 'name' field
 
     body('price')
         .isNumeric().withMessage('Price product must be a number')
