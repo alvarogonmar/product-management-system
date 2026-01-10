@@ -13,7 +13,7 @@ router.post("/",
         // Validate request body 
     body('name').notEmpty().withMessage('Name product is required'), // Validate 'name' field
 
-    body('price')
+    body('price') // Validate 'price' field
         .isNumeric().withMessage('Price product must be a number')
         .notEmpty().withMessage('Price product is required')
         .custom((value) => value > 0).withMessage('Price product must be greater than zero'),
