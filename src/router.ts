@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 
 router.post("/", 
         // Validate request body 
-    body('name').notEmpty().withMessage('Name product is required'), // Validate 'name' field
+    body('name').notEmpty().withMessage('Name product is required'),
 
     body('price') // Validate 'price' field
         .isNumeric().withMessage('Price product must be a number') 
