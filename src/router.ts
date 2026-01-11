@@ -19,7 +19,7 @@ router.post("/",
         .custom((value) => value > 0).withMessage('Price product must be greater than zero'), // Custom validation to ensure price > 0
 
     
-    createProduct // Handler to create product
+    createProduct
 );
 
 router.put("/", (req, res) => {
