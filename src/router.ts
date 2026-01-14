@@ -9,7 +9,7 @@ const router = Router();
 router.get("/", getProducts) // Get all products
 router.get("/:id", // Get product by ID
     param('id').isInt().withMessage('ID must be an integer'), // Validate that id is an integer
-    handleInputErrors, 
+    handleInputErrors,  // Middleware to handle validation errors
     getProductById
 );
 
