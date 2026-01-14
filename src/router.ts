@@ -14,7 +14,7 @@ router.get("/:id", // Get product by ID
 );
 
 router.post("/", // Create a new product
-    body('name').notEmpty().withMessage('Name product is required'),
+    body('name').notEmpty().withMessage('Name product is required'), // Validate name is not empty
     body('price')
         .isNumeric().withMessage('Price product must be a number')
         .notEmpty().withMessage('Price product is required')
