@@ -8,7 +8,7 @@ const router = Router();
 // Routing
 router.get("/", getProducts) // Get all products
 router.get("/:id", // Get product by ID
-    param('id').isInt().withMessage('ID must be an integer'), 
+    param('id').isInt().withMessage('ID must be an integer'), // Validate that id is an integer
     handleInputErrors, 
     getProductById
 );
