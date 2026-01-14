@@ -17,7 +17,7 @@ router.post("/", // Create a new product
     body('name').notEmpty().withMessage('Name product is required'), // Validate name is not empty
     body('price') // Validate price
         .isNumeric().withMessage('Price product must be a number') // Check if numeric
-        .notEmpty().withMessage('Price product is required')
+        .notEmpty().withMessage('Price product is required') // Check if not empty
         .custom((value) => value > 0).withMessage('Price product must be greater than zero'),
         handleInputErrors,  
     
