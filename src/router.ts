@@ -13,7 +13,7 @@ router.get("/:id", // Get product by ID
     getProductById // Handler function
 );
 
-router.post("/", 
+router.post("/", // Create a new product
     body('name').notEmpty().withMessage('Name product is required'),
     body('price')
         .isNumeric().withMessage('Price product must be a number')
