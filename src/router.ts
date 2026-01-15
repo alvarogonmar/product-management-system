@@ -36,7 +36,12 @@ router.put("/:id",
     updateProduct
 )
 
-router.patch("/", updateAvailability);
+router.patch("/:id",
+    body('availability')
+    .isBoolean().withMessage('Availability must be true or false'),
+    handleInputErrors,
+    updateAvailability
+);
 
 router.delete("/", (req, res) => {
     res.json({"Hello, World!": "DELETE"});
