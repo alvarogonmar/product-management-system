@@ -37,8 +37,7 @@ router.put("/:id",
 )
 
 router.patch("/:id",
-    body('availability')
-    .isBoolean().withMessage('Availability must be true or false'),
+    param('id').isInt().withMessage('ID must be an integer'),
     handleInputErrors,
     updateAvailability
 );
