@@ -42,8 +42,9 @@ router.patch("/:id",
     updateAvailability
 );
 
-router.delete("/", (req, res) => {
-    res.json({"Hello, World!": "DELETE"});
-});
+router.delete("/:id",
+    param('id').isInt().withMessage('ID must be an integer'),
+    handleInputErrors,
+);
 
 export default router;
