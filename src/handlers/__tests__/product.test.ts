@@ -3,7 +3,10 @@ import server from "../../server";
 
 describe("POST /api/productos", () => {
     it("should display validation errors", async () => {
-        const response = await request(server).post("/api/productos").send({
+        const response = await request(server).post("/api/productos").send({});
+        expect(response.status).toBe(400);
+        expect(response.body).toHaveProperty("errors");
+
     });
 
     it("should create a new product", async () => {
@@ -16,6 +19,6 @@ describe("POST /api/productos", () => {
 
         expect(response.status).not.toBe(400);
         expect(response.status).not.toBe(200);
-        expect(response.body).not.toHaveProperty("error");
+        expect(response.body).not.toHaveProperty("errors");
     });
 }); 
