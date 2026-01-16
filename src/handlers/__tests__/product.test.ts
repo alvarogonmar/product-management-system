@@ -6,6 +6,10 @@ describe("POST /api/productos", () => {
         const response = await request(server).post("/api/productos").send({});
         expect(response.status).toBe(400);
         expect(response.body).toHaveProperty("errors");
+        expect(response.body.errors).toHaveLength(4)
+
+        expect(response.status).not.toBe(404);
+        expect(response.body.errors).not.toHaveLength(2)
 
     });
 
