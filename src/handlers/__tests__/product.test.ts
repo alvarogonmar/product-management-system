@@ -72,3 +72,15 @@ describe("GET /api/productos/:id", () => {
         expect(response.body).not.toHaveProperty("errors");
     });
 });
+
+describe("GET /api/productos/:id", () => {
+    it("should return a 404 response for a non-existing product", async () => {
+        const productID = 2000
+        const response = await request(server).get(`/api/productos/${productID}`);
+        expect(response.status).toBe(404);
+        expect(response.body).toHaveProperty("error");
+
+        expect(response.body.error).toBe("Product not found")
+    })
+
+});
