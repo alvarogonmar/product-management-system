@@ -57,6 +57,11 @@ describe("POST /api/productos", () => {
 }); 
 
 describe("GET /api/productos/:id", () => {
+    it("should check if api/products url exists", async () => {
+        const response = await request(server).get("/api/productos");
+        expect(response.status).not.toBe(404);
+    });
+
     it("GET a JSON response with products", async () => {
         const response = await request(server).get("/api/productos");
         expect(response.status).toBe(200);
