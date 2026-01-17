@@ -10,3 +10,7 @@ const clearDB = async () => {
         console.error("Error clearing the database:", error);
         exit(1);
     }}
+
+if (process.argv[2] === '--clear') {
+    clearDB();
+}
