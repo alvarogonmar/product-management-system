@@ -32,6 +32,7 @@ describe("POST /api/productos", () => {
             name: "Test Product",
             price: "hola",
         });        
+        expect(response.status).toBe(400);
 
 
     });
