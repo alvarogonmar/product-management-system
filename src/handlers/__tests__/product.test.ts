@@ -112,4 +112,23 @@ describe("PUT /api/productos/:id", () => {
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("data");
     });
+
+
+    it("should validate that the price is greater than 0 when updating a product", async () => {
+        const response = await request(server)
+            .put("/api/productos/1")
+            .send({
+                name: "Updated Product",
+                price: 0,
+                availability: true
+            });
+
+        expect(response.status).toBe(400);
+        expect(response.body).toHaveProperty("errors");
+        expect(response.body.errors).toBeTruthy();
+        expect(response.body.errors).toHaveLength(1);
+
+        expect(response.status).not.toBe(200);
+        expect(response.body).not.toHaveProperty("data");
+    });
 });
