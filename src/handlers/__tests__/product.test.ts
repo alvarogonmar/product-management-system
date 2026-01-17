@@ -36,6 +36,8 @@ describe("POST /api/productos", () => {
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toHaveLength(2)
 
+        expect(response.status).not.toBe(404);
+        expect(response.body.errors).not.toHaveLength(3)
 
     });
 
