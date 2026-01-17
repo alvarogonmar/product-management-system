@@ -58,4 +58,12 @@ describe("POST /api/productos", () => {
 
 describe("GET /api/productos/:id", () => {
     it("GET a JSON response with products", async () => {
-        const response = await request(server).get("/api/productos/1");
+        const response = await request(server).get("/api/productos");
+        expect(response.status).toBe(200);
+        expect(response.headers['content-type']).toMatch(/json/);
+        expect(response.body).toHaveProperty("data");
+        expect(response.body.data).toHaveLength(1);
+        expect(response.status).not.toBe(404);
+        expect(response.body).not.toHaveProperty("errors");
+    });
+});
