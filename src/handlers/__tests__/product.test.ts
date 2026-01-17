@@ -27,6 +27,14 @@ describe("POST /api/productos", () => {
         expect(response.body.errors).not.toHaveLength(2)
 
     });
+    it("should validate that the price is a number and greater than 0", async () => {
+        const response = await request(server).post("/api/productos").send({
+            name: "Test Product",
+            price: "hola",
+        });        
+
+
+    });
 
 
     it("should create a new product", async () => {
