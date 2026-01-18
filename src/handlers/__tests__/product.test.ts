@@ -126,7 +126,7 @@ describe("PUT /api/productos/:id", () => {
         expect(response.status).toBe(400); // Expect a 400 Bad Request status
         expect(response.body).toHaveProperty("errors"); // Expect the response body to have an "errors" property
         expect(response.body.errors).toBeTruthy(); // Expect errors to be truthy
-        expect(response.body.errors).toHaveLength(1);
+        expect(response.body.errors).toHaveLength(1); // Expect exactly one error
 
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("data");
