@@ -118,7 +118,7 @@ describe("PUT /api/productos/:id", () => {
         const response = await request(server) // response variable
             .put("/api/productos/1") // PUT request to update product with ID 1
             .send({ // Send the following data in the request body
-                name: "Updated Product", // Updated name
+                name: "Updated Product",
                 price: 0,
                 availability: true
             });
