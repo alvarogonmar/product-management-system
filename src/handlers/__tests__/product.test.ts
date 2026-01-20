@@ -187,3 +187,12 @@ describe("DELETE /api/productos/:id", () => {
     it("should check a valid ID in the URL", async () => {
         const response = await request(server)
                         .delete("/api/productos/not-valid-url");
+        expect(response.status).toBe(400);
+        expect(response.body).toHaveProperty("errors");
+        expect(response.body.errors).toHaveLength(1);
+        expect(response.body.errors[0].msg).toBe("ID must be an integer");
+    });
+
+    
+
+});
