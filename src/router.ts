@@ -25,6 +25,7 @@ router.post("/", // Create a new product
 );
 
 router.put("/:id",
+    param('id').isInt().withMessage('ID must be an integer'),
     body('name').notEmpty().withMessage('Name product is required'),
     body('price')
         .isNumeric().withMessage('Price product must be a number')

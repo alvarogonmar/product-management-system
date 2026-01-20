@@ -105,7 +105,7 @@ describe("PUT /api/productos/:id", () => {
                         .put("/api/productos/not-valid-url")
                         .send({
                             name: "Updated Product",
-                            price: 0,
+                            price: 300,
                             availability: true
                         });
         expect(response.status).toBe(400);
@@ -142,6 +142,8 @@ describe("PUT /api/productos/:id", () => {
         expect(response.body).toHaveProperty("errors");
         expect(response.body.errors).toBeTruthy();
         expect(response.body.errors).toHaveLength(1);
+        expect(response.body.errors[0].msg).toBe("Price product must be greater than zero");
+
 
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("data");
@@ -162,5 +164,21 @@ describe("PUT /api/productos/:id", () => {
         
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("data");
+    });
+
+    it("should update an existing product with valid data", async () => {
+        const response = await request(server)
+            .put(`/api/productos/1`)
+            .send({
+                name: "Updated Product",
+                price: 29.99,
+                availability: true
+            });
+
+        expect(response.status).toBe(200);
+        expect(response.body).toHaveProperty("data");
+
+        expect(response.status).not.toBe(400);
+        expect(response.body).not.toHaveProperty("errors");
     });
 });
