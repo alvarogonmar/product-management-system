@@ -183,6 +183,10 @@ describe("PUT /api/productos/:id", () => {
     });
 });
 
+describe("PATCH /api/productos/:id", () => {
+    
+});
+
 describe("DELETE /api/productos/:id", () => {
     it("should check a valid ID in the URL", async () => {
         const response = await request(server)
