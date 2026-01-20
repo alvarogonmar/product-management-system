@@ -204,4 +204,14 @@ describe("DELETE /api/productos/:id", () => {
 
         expect(response.status).not.toBe(200);
     });
+
+    it("should delete an existing product", async () => {
+        const response = await request(server)
+            .delete(`/api/productos/1`);
+
+        expect(response.status).toBe(200);
+        expect(response.body.data).toBe("Product deleted successfully");
+        expect(response.status).not.toBe(404);
+        expect(response.status).not.toBe(400);
+    });
 });
