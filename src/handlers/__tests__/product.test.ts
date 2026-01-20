@@ -195,6 +195,19 @@ describe("PATCH /api/productos/:id", () => {
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("data");
     });
+
+    it("should update the product availability", async () => {
+        const response = await request(server)
+            .patch(`/api/productos/1`);
+
+        expect(response.status).toBe(200);
+        expect(response.body).toHaveProperty("data");
+        expect(response.body.data.availability).toBe(false);
+
+        expect(response.status).not.toBe(404);
+        expect(response.status).not.toBe(400);
+        expect(response.body).not.toHaveProperty("error");
+    });
 });
 
 describe("DELETE /api/productos/:id", () => {
