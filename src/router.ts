@@ -30,6 +30,16 @@ const router = Router();
  * 
  */
 
+/**
+ * @swagger
+ * /api/productos:
+ *  get:
+ *      summary: Retrieve a list of products
+ *      tags:
+ *          - Products
+ 
+ */
+
 // Routing
 router.get("/", getProducts) // Get all products
 router.get("/:id", // Get product by ID
