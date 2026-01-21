@@ -15,6 +15,5 @@ const options: swaggerJSDoc.Options = {
             description: "API RESTful for managing products using Node.js, Express, and TypeScript."
         },
     },
-        apis: []
-
+        apis: ['./src/router.ts'],
 };
