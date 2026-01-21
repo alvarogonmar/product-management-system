@@ -38,6 +38,9 @@ const router = Router();
  *      tags:
  *          - Products
  *      description: Retrieve a list of products from the database
+ *      responses:
+ *          200:
+ *             description: Successful response
  
  */
 
