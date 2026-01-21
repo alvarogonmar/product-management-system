@@ -41,7 +41,12 @@ const router = Router();
  *      responses:
  *          200:
  *             description: Successful response
- 
+ *             content:
+ *              application/json:
+ *                schema:
+ *                 type: array
+ *                 items:
+ *                      $ref: '#/components/schemas/Product'
  */
 
 // Routing
