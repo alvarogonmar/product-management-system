@@ -19,11 +19,11 @@ const router = Router();
  *          type: string
  *          description: The name of the product
  *          example: "Sample Product"
- *     price:
+ *      price:
  *          type: number
  *          description: The price of the product
  *          example: 300
- *     availability:
+ *      availability:
  *          type: boolean
  *          description: The availability of the product
  *          example: true
