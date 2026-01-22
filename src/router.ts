@@ -129,6 +129,7 @@ router.post("/", // Create a new product
  * @swagger
  * /api/productos/{id}:
  * put:
+ *   summary: Update an existing product
 
  * 
  * 
