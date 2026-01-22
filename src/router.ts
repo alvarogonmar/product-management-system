@@ -67,7 +67,17 @@ router.get("/", getProducts) // Get all products
  *           required: true
  *           schema:
  *                type: integer
- *           
+ *     responses:
+ *        200:
+ *          description: Successful response
+ *          content:
+ *              application/json:
+ *                schema:
+ *                  $ref: '#/components/schemas/Product'
+ *        404:
+ *          description: Product not found
+ *        400:
+ *          description: Invalid ID supplied
  */
 router.get("/:id", // Get product by ID
     param('id').isInt().withMessage('ID must be an integer'), // Validate that id is an integer
