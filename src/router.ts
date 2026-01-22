@@ -195,6 +195,25 @@ router.put("/:id",
  *     tags:
  *        - Products
  *     description: Returns the updated availability status of a product by its ID
+ *     parameters:
+ *         - in: path
+ *           name: id
+ *           description: ID of the product to retrieve
+ *           required: true
+ *           schema:
+ *                type: integer
+ *     responses:
+ *       200:
+ *         description: Product updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Product'
+ *       400:
+ *         description: Invalid input
+ *       404:
+ *         description: Product not found
+ * 
  */
 
 router.patch("/:id",
