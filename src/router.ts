@@ -187,6 +187,16 @@ router.put("/:id",
     updateProduct
 )
 
+/**
+ * @swagger
+ * /api/productos/{id}:
+ *  patch:
+ *     summary: Toggle product availability
+ *     tags:
+ *        - Products
+ *     description: Returns the updated availability status of a product by its ID
+ */
+
 router.patch("/:id",
     param('id').isInt().withMessage('ID must be an integer'),
     handleInputErrors,
