@@ -95,7 +95,8 @@ router.get("/:id", // Get product by ID
  *    description: Returns a new record in the database
  *    requestBody:
  *          required: true
- *          content: application/json:
+ *          content:
+ *            application/json:
  *             schema:
  *                  type: object
  *                  properties:
@@ -105,6 +106,11 @@ router.get("/:id", // Get product by ID
  *                     price:
  *                       type: number
  *                       description: The price of the product
+ *    responses:
+ *     201:
+ *      description: Product created successfully
+ *     400:
+ *      description: Invalid input
  */
 
 
