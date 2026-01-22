@@ -108,7 +108,11 @@ router.get("/:id", // Get product by ID
  *                       description: The price of the product
  *    responses:
  *     201:
- *      description: Product created successfully
+ *         description: Product created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Product'
  *     400:
  *      description: Invalid input
  */
@@ -128,23 +132,47 @@ router.post("/", // Create a new product
 /**
  * @swagger
  * /api/productos/{id}:
- * put:
- *   summary: Update an existing product
- *   tags:
- *     - Products
- *   description: Update a product by its ID
- *   parameters:
- *     - in: path
- *       name: id
- *       description: ID of the product to update
+ *   put:
+ *     summary: Update an existing product
+ *     tags:
+ *       - Products
+ *     description: Update a product by its ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         description: ID of the product to update
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     requestBody:
  *       required: true
- *       schema:
- *          type: integer
- * 
- * 
- * 
- * 
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 description: The name of the product
+ *               price:
+ *                 type: number
+ *                 description: The price of the product
+ *               availability:
+ *                 type: boolean
+ *                 example: true
+ *     responses:
+ *       200:
+ *         description: Product updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Product'
+ *       400:
+ *         description: Invalid input
+ *       404:
+ *         description: Product not found
  */
+
 
 router.put("/:id",
     param('id').isInt().withMessage('ID must be an integer'),
