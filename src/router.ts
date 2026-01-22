@@ -55,6 +55,8 @@ router.get("/", getProducts) // Get all products
 /**
  * @swagger
  * /api/productos/{id}:
+ *  get:
+ *     summary: Get a single product by ID
  * 
  */
 router.get("/:id", // Get product by ID
