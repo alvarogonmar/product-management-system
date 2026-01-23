@@ -2,7 +2,7 @@ import swaggerJSDoc from "swagger-jsdoc";
 
 const options: swaggerJSDoc.Options = {
     swaggerDefinition: {
-        openapi: "3.0.0",
+        openapi: "3.0.0", // Version of OpenAPI
         tags: [
             {
                 name: "Products",
