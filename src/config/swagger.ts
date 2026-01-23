@@ -12,7 +12,7 @@ const options: swaggerJSDoc.Options = {
         info: {
             title: "REST API Node.js / Express / TypeScript", // Title of the API
             version: "1.0.0", // Version of the API
-            description: "API RESTful for managing products using Node.js, Express, and TypeScript."
+            description: "API RESTful for managing products using Node.js, Express, and TypeScript." // Description of the API
         },
     },
         apis: ['./src/router.ts'],
