@@ -205,7 +205,7 @@ describe("PATCH /api/productos/:id", () => {
         expect(response.body.data.availability).toBe(false); // Expect availability to be toggled to false
 
         expect(response.status).not.toBe(404); // Ensure it's not a 404 error
-        expect(response.status).not.toBe(400);
+        expect(response.status).not.toBe(400); // Ensure it's not a 400 error
         expect(response.body).not.toHaveProperty("error"); 
     });
 });
