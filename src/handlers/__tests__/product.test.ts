@@ -197,7 +197,7 @@ describe("PATCH /api/productos/:id", () => {
     });
 
     it("should update the product availability", async () => {
-        const response = await request(server)
+        const response = await request(server) // Make the PATCH request
             .patch(`/api/productos/1`);
 
         expect(response.status).toBe(200);
@@ -206,7 +206,7 @@ describe("PATCH /api/productos/:id", () => {
 
         expect(response.status).not.toBe(404);
         expect(response.status).not.toBe(400);
-        expect(response.body).not.toHaveProperty("error");
+        expect(response.body).not.toHaveProperty("error"); 
     });
 });
 
