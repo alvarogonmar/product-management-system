@@ -200,7 +200,7 @@ describe("PATCH /api/productos/:id", () => {
         const response = await request(server) // Make the PATCH request
             .patch(`/api/productos/1`); // Assuming product with ID 1 exists
 
-        expect(response.status).toBe(200);
+        expect(response.status).toBe(200); // Expect a successful response
         expect(response.body).toHaveProperty("data");
         expect(response.body.data.availability).toBe(false);
 
