@@ -193,7 +193,7 @@ describe("PATCH /api/productos/:id", () => {
         expect(response.body.error).toBe("Product not found");
 
         expect(response.status).not.toBe(200);
-        expect(response.body).not.toHaveProperty("data"); 
+        expect(response.body).not.toHaveProperty("data");
     });
 
     it("should update the product availability", async () => { // Patch request to toggle availability
@@ -206,7 +206,7 @@ describe("PATCH /api/productos/:id", () => {
 
         expect(response.status).not.toBe(404); // Ensure it's not a 404
         expect(response.status).not.toBe(400); // Ensure it's not a 400
-        expect(response.body).not.toHaveProperty("error"); // Ensure there's no error property
+        expect(response.body).not.toHaveProperty("error"); 
     });
 });
 
