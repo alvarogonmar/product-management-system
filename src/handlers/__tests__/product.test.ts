@@ -190,7 +190,7 @@ describe("PATCH /api/productos/:id", () => {
             .patch(`/api/productos/${productID}`); //PATCH endpoint to toggle availability
 
         expect(response.status).toBe(404); // Expect a 404 Not Found status
-        expect(response.body.error).toBe("Product not found");
+        expect(response.body.error).toBe("Product not found"); // Expect the error message
 
         expect(response.status).not.toBe(200);
         expect(response.body).not.toHaveProperty("data");
