@@ -193,7 +193,7 @@ describe("PATCH /api/productos/:id", () => {
         expect(response.body.error).toBe("Product not found"); // Expect the error message to indicate that the product was not found
 
         expect(response.status).not.toBe(200); // Expect that the status code is not 200
-        expect(response.body).not.toHaveProperty("data");
+        expect(response.body).not.toHaveProperty("data"); // Expect that there is no data property in the response body
     });
 
     it("should update the product availability", async () => { // Make the PATCH request to update availability
